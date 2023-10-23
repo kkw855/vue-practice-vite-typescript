@@ -1,0 +1,34 @@
+{
+  // 이 파일이 프로젝트에서 사용되는 루트 수준 파일이라고 알림
+  "root": true,
+  // ESLint가 vue 파일 구문 분석 가능하게
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    // ESLint가 타입스크립트 구문 분석 가능하게
+    "parser": "@typescript-eslint/parser"
+  },
+  "plugins": [
+    // typescript-eslint의 규칙을 사용할 수 있게
+    "@typescript-eslint"
+  ],
+  "extends": [
+    // ESLint에 내장된 "권장" 구성
+    "eslint:recommended",
+    // TypeScript 관련 규칙을 활성화
+    "plugin:@typescript-eslint/recommended",
+    // .vue 파일의 템플릿과 스크립트는 물론 .js 파일의 Vue 코드도 확인
+    "plugin:vue/vue3-recommended",
+    // 꼭 배열의 마지막에 위치 시킨다. 다른 구성을 재정의할 수 있는 기회를 얻음
+    "prettier"
+  ],
+  "ignorePatterns": [
+    ".husky/",
+    ".idea/",
+    ".vscode/",
+    "node_modules/",
+    "public/"
+  ],
+  "rules": {
+    "prefer-const": "error"
+  }
+}
