@@ -1,3 +1,6 @@
+# Vite
+- [VueSchool](https://vueschool.io/courses/rapid-development-with-vite)
+
 ## npm 의존성 관리  
 
 현재 버전을 npm 레지스트리의 최신 버전과 비교합니다. 사용 가능한 버전을 요약한 표로 인쇄합니다.
@@ -95,3 +98,19 @@ Production 일 때
 <img alt="Vue logo" src="data:image/png;base64,iVBORw0KGgoAAA......... />
 ```
 Vite 설정을 통해서 base64 인코딩을 수행할 파일을 설정할 수 있습니다.
+
+## JSON
+Vite이 자동으로 JSON String을 Javascript 객체로 파싱 해 줍니다.  
+그리고 Tree Shaking으로 전체 데이터가 아니라 웹에서 사용하는 데이터만 빌드에 포함합니다.
+```json
+{
+  "framework": "Vue",
+  "buildTool": "Vite, of course!",
+  "developerMood": "Happy, Happy, Happy"
+}
+```
+```vue
+<script setup>
+import { developerMood } from './data.json'
+</script>
+```

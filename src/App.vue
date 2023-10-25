@@ -7,6 +7,9 @@ const logo2 = new URL('./assets/logo.png', import.meta.url).href
 console.log(styles)
 console.log(logo)
 console.log(logo2)
+
+import { developerMood } from './data.json'
+console.log(developerMood)
 </script>
 
 <template>
