@@ -8,7 +8,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{html,json}": "prettier --write"
+    "*.{html,json,css}": "prettier --write"
   },
   "scripts": {
     "check_conflicts_prettier": "eslint-config-prettier .eslintrc.json",
