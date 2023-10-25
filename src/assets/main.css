@@ -1,9 +1,9 @@
-@import './typography.css';
+@import url('./typography.css');
 
 :root {
-  --primaryColor: green;
+  --primary-color: green;
 }
 
 body {
-  background-color: var(--primaryColor)
+  background-color: var(--primary-color);
 }
