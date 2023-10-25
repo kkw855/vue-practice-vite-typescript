@@ -36,3 +36,7 @@ CSS 파일에서 다른 CSS 파일을 임포트 할 수 있다.
 ```css
 @import './assets/main.css';
 ```
+
+## PostCSS 플러그인
+.scss, .sass, .less, .styl, .stylus 등을 사용하는 것보다는  
+PostCSS 플러그인과 함께 네이티브 CSS 변수를 사용하여 미래 표준을 준수하는 CSS를 작성하도록 권고하고 있습니다.
