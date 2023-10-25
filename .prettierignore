@@ -1,7 +1,12 @@
+node_modules
 .husky
+.prettierignore
+.stylelintignore
+.eslintignore
+
 .idea
 .vscode
-node_modules
+
 public
 
 package-lock.json
