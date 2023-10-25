@@ -42,7 +42,11 @@ CSS 파일에서 다른 CSS 파일을 임포트 할 수 있다.
 PostCSS 플러그인과 함께 네이티브 CSS 변수를 사용하여 미래 표준을 준수하는 CSS를 작성하도록 권고하고 있습니다.
 
 ## CSS Module
-클래스 이름이 충돌하는 걸 막아줍니다. ```<style scoped>```와 비슷합니다. 
+클래스 이름이 충돌하는 걸 막아줍니다. ```<style scoped>```와 비슷합니다.
+Random Hash가 추가된 클래스 이름을 사용하기 때문에 클래스 이름 충돌을 피할 수 있습니다.
+```
+{example: '_example_1mlos_1'}
+```
 ```vue
 <script setup>
 import styles from './assets/example.module.css'
