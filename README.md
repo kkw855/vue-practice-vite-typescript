@@ -15,3 +15,24 @@ npm update
 ```sh
 npm install -D lint-staged@latest
 ```
+
+## CSS 임포트
+임포트 방법  
+첫 번째
+```vue
+<script setup>
+import './assets/main.css'  
+</script>
+```
+두 번째  
+scoped로 설정하거나 미디어 쿼리를 사용할 수 있다.
+```vue
+<style scoped>
+@import './assets/main.css' (max-width: 800px);  
+</style>
+```
+세 번째
+CSS 파일에서 다른 CSS 파일을 임포트 할 수 있다.
+```css
+@import './assets/main.css';
+```
