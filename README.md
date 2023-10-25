@@ -42,7 +42,7 @@ CSS 파일에서 다른 CSS 파일을 임포트 할 수 있다.
 PostCSS 플러그인과 함께 네이티브 CSS 변수를 사용하여 미래 표준을 준수하는 CSS를 작성하도록 권고하고 있습니다.
 
 ## CSS Module
-클래스 이름이 충돌하는 걸 막아줍니다. ```<style scoped>```와 비슷합니다.
+클래스 이름이 충돌하는 걸 막아줍니다. ```<style scoped>```와 비슷합니다.  
 Random Hash가 추가된 클래스 이름을 사용하기 때문에 클래스 이름 충돌을 피할 수 있습니다.
 ```
 {example: '_example_1mlos_1'}
@@ -55,3 +55,43 @@ import styles from './assets/example.module.css'
   <p :class="styles.example">Hello CSS Modules</p>
 </template>
 ```
+
+## Image
+임포트 방법 세 가지  
+첫 번째  
+하드코딩 방식
+```vue
+<script setup>
+import logo from './assets/logo.png'
+</script>
+// 또는
+<template>
+  <img alt="Vue logo" src="./assets/logo.png" />  
+</template>
+```
+두 번째  
+하드코딩이 불가능하고 동적으로 만들어야 할 때 유용합니다.
+```vue
+<script setup>
+const logo = new URL('./assets/logo.png', import.meta.url).href
+</script>
+```
+세 번째  
+public 디렉터리에 logo.png 파일을 놓습니다.  
+Vite은 public 디렉터리 파일에 어떠한 처리 과정도 수행하지 않습니다.  
+파일 이름 Random Hash 추가 또는 Base64 변환 등을 수행하지 않습니다.  
+```vue
+<template>
+  <img alt="Vue logo" src="/logo.png" />
+</template>
+```
+Development, Production 환경에서 차이가 있습니다.  
+Dev 일 때
+```html
+<img alt="Vue logo" src="/src/assets/logo.png">
+```
+Production 일 때
+```html
+<img alt="Vue logo" src="data:image/png;base64,iVBORw0KGgoAAA......... />
+```
+Vite 설정을 통해서 base64 인코딩을 수행할 파일을 설정할 수 있습니다.

@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import styles from './assets/example.module.css'
+import logo from './assets/logo.png'
+
+const logo2 = new URL('./assets/logo.png', import.meta.url).href
 
 console.log(styles)
+console.log(logo)
+console.log(logo2)
 </script>
 
 <template>
@@ -11,6 +16,9 @@ console.log(styles)
     <p>PostCSS</p>
   </div>
   <p :class="styles.example">Hello CSS Modules</p>
+  <img alt="Vue logo" :src="logo" />
+  <img alt="Vue logo" :src="logo2" />
+  <img alt="Vue logo" src="/logo.png" />
 </template>
 
 <style>
